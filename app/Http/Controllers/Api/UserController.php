@@ -11,10 +11,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $paginate = Product::paginate(2);
         return response()->json([
             'success' => true,
-            'products' => $products
+            'products' => $paginate
         ]);
     }
 }
