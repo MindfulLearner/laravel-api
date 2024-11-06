@@ -17,8 +17,8 @@ class UserController extends Controller
             'products' => $paginate
         ]);
     }
-    public function show($id) {
-        $product = Product::find($id);
+    public function show($slug) {
+        $product = Product::where('slug', $slug)->first();
         return response()->json([
             'success' => true,
             'product' => $product
