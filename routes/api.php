@@ -25,3 +25,4 @@ Route::get('/users/{slug}', [UserController::class, 'show']);
 
 
 Route::post('/create_contact', [ContactController::class, 'createContact']);
+
