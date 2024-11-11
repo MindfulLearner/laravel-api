@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ContactController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{slug}', [UserController::class, 'show']);
+
+
+Route::post('/create_contact', [ContactController::class, 'createContact']);
